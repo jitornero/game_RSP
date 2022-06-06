@@ -1,16 +1,26 @@
 
 
-document.getElementById("button").onclick = function (){
-    game();
-}
+// document.getElementById("button").onclick = function (){
+//     game();
 
 
-// INPUT UNCASE SENTITIVE
-function playerSelection (){
-    let input = prompt("Hola!. Ingresa con la herramienta que quieres jugar. (Rock, Scissors or paper)");
-    let lowerInput = input.toLowerCase();
-    console.log(`You play: ${lowerInput}`);
-    return lowerInput;
+// }
+const buttons = document.querySelectorAll('input');
+
+buttons.forEach( (button)=> {
+    if (button.value== "rock"){
+        button.onclick = ()=> {game("rock")};
+    } else if (button.value== "scisors") {
+        button.onclick = ()=> {game("scisors")};
+    } else {
+        button.onclick = ()=> {game("paper")};
+    }
+});
+
+
+function playerSelection (player){
+
+return player;
 
 }
 
@@ -48,9 +58,9 @@ function playRound ( playerSelection,computerSelection) {
 
 }
 
-function game () {
+function game (player) {
         for (let i=0; i <5; i++) {
-            playRound(playerSelection(),computerSelection());              
+            playRound(playerSelection(player),computerSelection());              
         }
         result();
     }
