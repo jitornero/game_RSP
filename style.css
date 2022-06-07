@@ -20,3 +20,19 @@ h1{
 body {
     background-color: rgb(206, 206, 206);
 }
+
+.text{
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid black;
+}
+
+
+#textbody{
+    padding:20px;
+}
+
+#textbody > div{
+    padding:5px;
+    width: 23%;
+}

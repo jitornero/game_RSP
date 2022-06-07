@@ -1,35 +1,33 @@
-
-
-// document.getElementById("button").onclick = function (){
-//     game();
-
-
-// }
 const buttons = document.querySelectorAll('input');
+const divResult = document.querySelector('.result');
 
 buttons.forEach( (button)=> {
     if (button.value== "rock"){
         button.onclick = ()=> {game("rock")};
-    } else if (button.value== "scisors") {
-        button.onclick = ()=> {game("scisors")};
+    } else if (button.value== "scissors") {
+        button.onclick = ()=> {game("scissors")};
     } else {
         button.onclick = ()=> {game("paper")};
     }
 });
 
 
+//PLAYERS SELECTION
 function playerSelection (player){
 
-return player;
+    document.querySelector('.player').textContent= `${player}`;
+    return player;
 
 }
 
 
-//COMPUTERS PLAY
+//COMPUTERS SELECTION
 function computerSelection () {
     let computer = ["rock", "scissors", "paper"];
     let randomNumber = computer[Math.floor(Math.random() * 3)];
     console.log(`Computer plays:  ${randomNumber}`);
+    document.querySelector('.computer').textContent =`${randomNumber}`;
+
     return randomNumber;
 }
 
@@ -59,10 +57,14 @@ function playRound ( playerSelection,computerSelection) {
 }
 
 function game (player) {
-        for (let i=0; i <5; i++) {
-            playRound(playerSelection(player),computerSelection());              
-        }
-        result();
+        //SEUDOCOUDE: MIENTRAS PLAYROUND SE HAYA JUGADO MENOS DE 6 VECES, JUGAR. cUANDO TERMINE LAS 5 RONDAS, DEVOLVER RESULT.
+            
+        for (let i=0;i<6;i++){
+        playRound(playerSelection(player),computerSelection());
+        break;              
+    }
+            //result();
+
     }
 
 
@@ -85,19 +87,21 @@ function result (){
     Player: ${countPlayer}
     Computer: ${countComputer}
     ${Result}`;
-    console.log(finalResult)
+    document.querySelector(".result").textContent = finalResult;
 
+    return finalResult;
 }
 
 
 function count (x){
 
     function print(){
-        console.log(`Total counter= 
+        divResult.textContent =(`Total counter= 
         Player:${countPlayer}
         Computer: ${countComputer}`)
     }
 
+    print();
     if (x == "You win"){
         countPlayer +=1;
         print();
