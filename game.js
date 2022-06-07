@@ -62,9 +62,13 @@ function game (player) {
         for (let i=0;i<6;i++){
         playRound(playerSelection(player),computerSelection());
         break;              
-    }
-            //result();
+        }
 
+        if (countComputer ==5 || countPlayer ==5){
+            result();
+            countComputer = 0;
+            countPlayer = 0;
+        } 
     }
 
 
