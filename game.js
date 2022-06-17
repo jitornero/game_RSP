@@ -14,7 +14,6 @@ buttons.forEach( (button)=> {
 
 //PLAYERS SELECTION
 function playerSelection (player){
-
     document.querySelector('.player').textContent= `${player}`;
     return player;
 
@@ -55,7 +54,7 @@ function playRound ( playerSelection,computerSelection) {
     }
 
 }
-
+// INICIADOR + CONTROL DE LAS RONDAS.
 function game (player) {
         //SEUDOCOUDE: MIENTRAS PLAYROUND SE HAYA JUGADO MENOS DE 6 VECES, JUGAR. cUANDO TERMINE LAS 5 RONDAS, DEVOLVER RESULT.
             
@@ -100,7 +99,7 @@ function result (){
 function count (x){
 
     function print(){
-        divResult.textContent =(`Total counter= 
+        divResult.textContent =(`  
         Player:${countPlayer}
         Computer: ${countComputer}`)
     }
