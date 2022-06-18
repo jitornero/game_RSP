@@ -1,6 +1,14 @@
 const buttons = document.querySelectorAll('input');
 const divResult = document.querySelector('.result');
+const result1 = document.querySelector('.result1');
+const result2 = document.querySelector('.result2');
 
+// VARIABLES CONTADORAS DE RONDA, IR A FUNCION GAME PARA VER
+let countPlayer = 0;
+let countComputer = 0;
+
+
+//0. INICIA CON LOS BOTONES Y ASIGNA VALO A LOS PARAMETROS PARA LAS SIGUIENTES FUNCIONES
 buttons.forEach( (button)=> {
     if (button.value== "rock"){
         button.onclick = ()=> {game("rock")};
@@ -12,7 +20,7 @@ buttons.forEach( (button)=> {
 });
 
 
-//PLAYERS SELECTION
+//2.a PLAYERS SELECTION
 function playerSelection (player){
     document.querySelector('.player').textContent= `${player}`;
     return player;
@@ -20,7 +28,7 @@ function playerSelection (player){
 }
 
 
-//COMPUTERS SELECTION
+//2.b COMPUTERS SELECTION
 function computerSelection () {
     let computer = ["rock", "scissors", "paper"];
     let randomNumber = computer[Math.floor(Math.random() * 3)];
@@ -30,8 +38,7 @@ function computerSelection () {
     return randomNumber;
 }
 
-let countPlayer = 0;
-let countComputer = 0;
+
 
 function playRound ( playerSelection,computerSelection) {
     
@@ -50,73 +57,82 @@ function playRound ( playerSelection,computerSelection) {
     else if (playerSelection == "scissors" && computerSelection == "rock" || playerSelection == "paper" && computerSelection == "scissors" || playerSelection == "rock" && computerSelection == "paper") {
         let loose = "You loose :(";
         console.log(loose);
-        return count (loose);
+        return count(loose);
     }
 
 }
-// INICIADOR + CONTROL DE LAS RONDAS.
+
+// 1. INICIADOR + CONTROL DE LAS RONDAS.
 function game (player) {
-        //SEUDOCOUDE: MIENTRAS PLAYROUND SE HAYA JUGADO MENOS DE 6 VECES, JUGAR. cUANDO TERMINE LAS 5 RONDAS, DEVOLVER RESULT.
-            
-        for (let i=0;i<6;i++){
+        divResult.className = 'result';
+        //for (let i=0;i<6;i++){
         playRound(playerSelection(player),computerSelection());
-        break;              
-        }
+       // i=0;
+       // break;              
+        //}
 
         if (countComputer ==5 || countPlayer ==5){
-            result();
-            countComputer = 0;
-            countPlayer = 0;
-        } 
-    }
-
-
-function result (){
-
-    let Result = "";
+            Result();
+            
+        }
     
-    if (countPlayer > countComputer){
-        Result =  "Congrats! You win! Refresh the page and play again."
-    }
-    else if (countPlayer < countComputer){
-        Result =  "Sorry:( You loose. try again and beat it!"
-    }
-
-    else if (countPlayer == countComputer){
-        Result =  "That's a tie. Try again!"
-    }
-
-    let finalResult = `The Final result is 
-    Player: ${countPlayer}
-    Computer: ${countComputer}
-    ${Result}`;
-    document.querySelector(".result").textContent = finalResult;
-
-    return finalResult;
 }
 
 
+//CONTADOR
 function count (x){
 
-    function print(){
+    function print(x){
         divResult.textContent =(`  
-        Player:${countPlayer}
-        Computer: ${countComputer}`)
+        --Tú: ${countPlayer} || ${countComputer} :Máquina-- // 
+        ${x}`);
+        
     }
 
-    print();
+    //print();
     if (x == "You win"){
         countPlayer +=1;
-        print();
+        print(x);
+        result2.textContent = x;
     }
 
     else if (x == "You loose :("){
         countComputer +=1;
-        print();
+        print(x);
+        result2.textContent = x;
     }
 
     else if (x == "Thats a tie!"){
-        print();
+        print(x);
+        result2.textContent = x;
     }
 }
 
+
+
+
+// RESPUESTA FINAL
+function Result (){
+
+    let result = "";
+    
+    if (countPlayer > countComputer){
+        result =  "Congrats! You win! Refresh the page and play again."
+    }
+    else if (countPlayer < countComputer){
+        result =  "Sorry:( You loose. try again and beat it!"
+    }
+
+    let finalResult = `The Final result is 
+    Player: ${countPlayer}
+    Computer: ${countComputer}`;
+    
+    console.log(finalResult);
+    divResult.textContent = `${finalResult}
+     ${result}`;
+    
+    divResult.className = 'finalResult'; 
+// REINICIA EL CONTADOR A 0
+    countComputer = 0;
+    countPlayer = 0;
+}
