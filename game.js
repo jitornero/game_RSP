@@ -44,19 +44,19 @@ function computerSelection () {
 function playRound ( playerSelection,computerSelection) {
     
     if (playerSelection == computerSelection) {
-        let tie = "Thats a tie!";
+        let tie = "Empate!";
         console.log(tie);
         return  count(tie);
     }
 
     else if (playerSelection == "piedra" && computerSelection == "tijera" || playerSelection == "tijera" && computerSelection == "papel" || playerSelection == "papel" && computerSelection == "piedra") {
-        let win = "You win";
+        let win = "Ganaste!";
         console.log(win)
         return count(win);
     }
 
     else if (playerSelection == "tijera" && computerSelection == "piedra" || playerSelection == "papel" && computerSelection == "tijera" || playerSelection == "piedra" && computerSelection == "papel") {
-        let loose = "You loose :(";
+        let loose = "Perdiste :(";
         console.log(loose);
         return count(loose);
     }
@@ -91,19 +91,19 @@ function count (x){
     }
 
     //print();
-    if (x == "You win"){
+    if (x == "Ganaste!"){
         countPlayer +=1;
         print(x);
         result2.textContent = x;
     }
 
-    else if (x == "You loose :("){
+    else if (x == "Perdiste :("){
         countComputer +=1;
         print(x);
         result2.textContent = x;
     }
 
-    else if (x == "Thats a tie!"){
+    else if (x == "Empate!"){
         print(x);
         result2.textContent = x;
     }
@@ -118,15 +118,15 @@ function Result (){
     let result = "";
     
     if (countPlayer > countComputer){
-        result =  "Congrats! You win! Refresh the page and play again."
+        result =  "Felicitaciones, ganaste!! Actualiza la página y juega de nuevo!"
     }
     else if (countPlayer < countComputer){
-        result =  "Sorry:( You loose. try again and beat it!"
+        result =  "Lo lamento, perdiste :(  Actualiza la página e intante ganarle!"
     }
 
-    let finalResult = `The Final result is 
-    Player: ${countPlayer}
-    Computer: ${countComputer}`;
+    let finalResult = `El resultado Final es [ 
+    Vos: ${countPlayer}
+    La Máquina: ${countComputer}]`;
     
     console.log(finalResult);
     divResult.textContent = `${finalResult}
