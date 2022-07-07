@@ -10,12 +10,12 @@ let countComputer = 0;
 
 //0. INICIA CON LOS BOTONES Y ASIGNA VALO A LOS PARAMETROS PARA LAS SIGUIENTES FUNCIONES
 buttons.forEach( (button)=> {
-    if (button.value== "rock"){
-        button.onclick = ()=> {game("rock")};
-    } else if (button.value== "scissors") {
-        button.onclick = ()=> {game("scissors")};
+    if (button.value== "piedra"){
+        button.onclick = ()=> {game("piedra")};
+    } else if (button.value== "tijera") {
+        button.onclick = ()=> {game("tijera")};
     } else {
-        button.onclick = ()=> {game("paper")};
+        button.onclick = ()=> {game("papel")};
     }
 });
 
@@ -23,6 +23,7 @@ buttons.forEach( (button)=> {
 //2.a PLAYERS SELECTION
 function playerSelection (player){
     document.querySelector('.player').textContent= `${player}`;
+    console.log('Vos jugaste: ' + player)
     return player;
 
 }
@@ -30,7 +31,7 @@ function playerSelection (player){
 
 //2.b COMPUTERS SELECTION
 function computerSelection () {
-    let computer = ["rock", "scissors", "paper"];
+    let computer = ["piedra", "tijera", "papel"];
     let randomNumber = computer[Math.floor(Math.random() * 3)];
     console.log(`Computer plays:  ${randomNumber}`);
     document.querySelector('.computer').textContent =`${randomNumber}`;
@@ -48,13 +49,13 @@ function playRound ( playerSelection,computerSelection) {
         return  count(tie);
     }
 
-    else if (playerSelection == "rock" && computerSelection == "scissors" || playerSelection == "scissors" && computerSelection == "paper" || playerSelection == "paper" && computerSelection == "rock") {
+    else if (playerSelection == "piedra" && computerSelection == "tijera" || playerSelection == "tijera" && computerSelection == "papel" || playerSelection == "papel" && computerSelection == "piedra") {
         let win = "You win";
         console.log(win)
         return count(win);
     }
 
-    else if (playerSelection == "scissors" && computerSelection == "rock" || playerSelection == "paper" && computerSelection == "scissors" || playerSelection == "rock" && computerSelection == "paper") {
+    else if (playerSelection == "tijera" && computerSelection == "piedra" || playerSelection == "papel" && computerSelection == "tijera" || playerSelection == "piedra" && computerSelection == "papel") {
         let loose = "You loose :(";
         console.log(loose);
         return count(loose);
