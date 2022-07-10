@@ -2,14 +2,20 @@ html{
     
 }
 
+main {
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+}
+
 body {
     display: flex;
     margin: 0 auto;
     color: black;
     font-family: Arial, Helvetica, sans-serif;
-    max-width: 75vw;
+    /* max-width: 75vw;
     min-height: 100vh;
-    max-height: 500px;
+    max-height: 500px; */
 
 }
 
@@ -41,13 +47,13 @@ body {
     border: 1px solid black;
 }
 
-.container div{
+/* .container div{
     background-color: ;
     padding: 1vh;
-}
+} */
 
 #textbody{
-    padding:20px;
+    /* padding:20px; */
 }
 
 #textbody > div{
@@ -90,7 +96,7 @@ input:hover {
 
   .finalResult {
     margin-top: 1vw;
-    height: 5vh;
+    height: 5vh 5vw;
     display: flex;
     justify-content: center;
     background-color: rgb(255, 252, 86);

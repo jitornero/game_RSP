@@ -1,39 +1,52 @@
 <!DOCTYPE html>
-<html>
+<html class="min-vh-100">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>V3.x - Responsive</title>
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
   
 </head>
-<body>
+<body class="vh-100">
   
-  
-<div class="header">
-  <h1> Piedra 🪨, Papel 📃 o Tijera ✂️ </h1>
-  <p> Jugaras contra la máquina. El primero que alcance 5 partidas ganadas sera el vencedor! </p>
-</div>
-
-
-<div class="container">
-  <div id="textbody" class ="text">
-    <div>Jugaste:<div class="text player"> <br></div></div>
-    <div>La maquina jugó:<div class="text computer"> <br></div></div>
+<main class="container vh-100 justify-content-evenly justify-content-lg-start">  
+  <div class="row">
+    <div class="col-12 ">
+      <div class="header">
+      <h1> Piedra 🪨, Papel 📃 o Tijera ✂️ </h1>
+      <p> Jugaras contra la máquina. El primero que alcance 5 partidas ganadas sera el vencedor! </p>
+      </div>
+    </div>
   </div>
 
-<div class="result">
-  <div class="result1"></div>
-  <div class="result2"></div>
-</div>
+  <div class="row">
+      <div class="container">
+        <div id="textbody" class ="text">
+          <div>Jugaste:<div class="text player"> <br></div></div>
+          <div>La maquina jugó:<div class="text computer"> <br></div></div>
+        </div>
+      </div>
+  </div>
+  <div class="row">
+    <div class="result">
+      <div class="result1"></div>
+      <div class="result2"></div>
+    </div>
+  </div>
 
-</div>
-<div class="divButton">
-  <input class= "button" type="button" value="piedra" >
-  <input class= "button" type="button" value="tijera" >
-  <input class= "button" type="button" value="papel" >
-</div>
+  <div class="row">
+    <div class="divButton">
+      <input class= "button" type="button" value="piedra" >
+      <input class= "button" type="button" value="tijera" >
+      <input class= "button" type="button" value="papel" >
+    </div>
+  </div>
+</main>
+
+
 
 <script src="js/game.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
