@@ -121,7 +121,7 @@ function Result (){
         result =  "Felicitaciones, ganaste!! Actualiza la página y juega de nuevo!"
     }
     else if (countPlayer < countComputer){
-        result =  "Lo lamento, perdiste :(  Actualiza la página e intante ganarle!"
+        result =  "Lo lamento, perdiste :(  Actualiza la página y juega de nuevo!"
     }
 
     let finalResult = `El resultado Final es [ 

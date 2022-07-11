@@ -53,6 +53,8 @@ body {
 } */
 
 #textbody{
+    display: flex;
+    
     /* padding:20px; */
 }
 
@@ -61,6 +63,12 @@ body {
     width: 23%;
 }
 
+#jugaste{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
 
 .result{
     height: 5vh;
