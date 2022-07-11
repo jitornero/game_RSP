@@ -4,9 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>V3.x - Responsive</title>
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/style.css">
+  <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+
   
 </head>
 <body class="vh-100">
@@ -24,8 +25,8 @@
   <div class="row">
       <div class="container">
         <div id="textbody" class ="text">
-          <div>Jugaste:<div class="text player"> <br></div></div>
-          <div>La maquina jugó:<div class="text computer"> <br></div></div>
+          <div class="col">Jugaste:<div class="text player"> <br></div></div>
+          <div class="col">La máquina jugó:<div class="text computer"> <br></div></div>
         </div>
       </div>
   </div>
@@ -37,7 +38,7 @@
   </div>
 
   <div class="row">
-    <div class="divButton">
+    <div class="col-12 divButton">
       <input class= "button" type="button" value="piedra" >
       <input class= "button" type="button" value="tijera" >
       <input class= "button" type="button" value="papel" >
@@ -48,7 +49,7 @@
 
 
 <script src="js/game.js"></script>
-<script src="js/bootstrap.bundle.min.js"></script>
+<!-- <script src="js/bootstrap.bundle.min.js"></script> -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>

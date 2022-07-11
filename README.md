@@ -10,10 +10,13 @@ v1:
 
 v2.1 
     . Se le agrega estilo y funcionalidad a la página para que el usuario no tenga que escribir datos.
-v2.2: (ACTUAL VERSION)
+v2.2: 
     . Traducción del copy al español.
 
 
-Proximas Actualizaciones:
+v3.1  (ACTUAL VERSION) Se hace RESPONSIVE para todos los MOBILE devices.
 
-v3.x  Se hace RESPONSIVE para todos los MOBILE devices.
+
+
+Proximas Actualizaciones:
+Actualizar y distribuir correctamente los resultados: "Jugaste/resultado // La Máquina jugó/resultado". Se lo vemos en Mobile el borde del input de la derecha queda desfasado respecto a la izquierda - NIVELAR.
